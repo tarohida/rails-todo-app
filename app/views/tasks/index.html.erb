@@ -1,0 +1,15 @@
+<div>
+  <ul>
+    <% @task.each do |task| %>
+      <li>
+        <%= render "form", task: task %>
+        <%= link_to "Destroy", task_path(task), data: {
+          turbo_method: :delete
+        } %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<div>
+  <%= render "form", task: @new_task %>
+</div>
